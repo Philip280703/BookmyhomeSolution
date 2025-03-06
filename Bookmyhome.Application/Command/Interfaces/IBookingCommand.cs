@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bookmyhome.Application.Services.Interfaces
+namespace Bookmyhome.Application.Command.Interfaces
 {
 	public interface IBookingCommand
 	{

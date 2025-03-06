@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookmyhome.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookmyhome.Persistence", "Bookmyhome.Persistence\Bookmyhome.Persistence.csproj", "{07852958-39C6-4EE9-937B-C12BE3691A6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookmyhome.UI.BlazorApp", "Bookmyhome.UI.BlazorApp\Bookmyhome.UI.BlazorApp.csproj", "{BF463E12-DC62-4F08-A430-C87F0166D85A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{07852958-39C6-4EE9-937B-C12BE3691A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07852958-39C6-4EE9-937B-C12BE3691A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07852958-39C6-4EE9-937B-C12BE3691A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF463E12-DC62-4F08-A430-C87F0166D85A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF463E12-DC62-4F08-A430-C87F0166D85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF463E12-DC62-4F08-A430-C87F0166D85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF463E12-DC62-4F08-A430-C87F0166D85A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

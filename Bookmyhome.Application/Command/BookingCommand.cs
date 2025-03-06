@@ -1,5 +1,5 @@
 ﻿using Bookmyhome.Application.RepositoryInterfaces;
-using Bookmyhome.Application.Services.Interfaces;
+using Bookmyhome.Application.Command.Interfaces;
 using Bookmyhome.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bookmyhome.Application.Services
+namespace Bookmyhome.Command.Services
 {
 	internal class BookingCommand : IBookingCommand
 	{
