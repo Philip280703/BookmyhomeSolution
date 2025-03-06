@@ -1,0 +1,24 @@
+﻿
+
+Entity framework driller. brug derfor denne guide!
+
+
+-- migrations --
+
+ved add-migration skriv navnet på migrationen og tilføj --  -Project Bookmyhome.Persistence -Context MyDBContext
+
+
+
+-- update database --
+
+til update db i EF brug ---- update-database -Project Bookmyhome.Persistence -Context MyDBContext
+
+
+
+
+
+-- arkitektur --
+
+Der skal oprettes controller i blazor som skal kalde en I..Command. f.eks. IBookingCommand!
+
+ConnString.cs skal laves til gitignore og tilføjes personlig connection string efter formatet.
