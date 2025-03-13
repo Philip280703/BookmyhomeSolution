@@ -11,6 +11,6 @@ namespace Bookmyhome.Application.Command.Interfaces
 	{
 		void Commit();
 		void Rollback();
-		void BeginTransaction(System.Data.IsolationLevel isolationLevel = System.Data.IsolationLevel.Serializable);
+		void BeginTransaction(System.Data.IsolationLevel isolationLevel);
 	}
 }

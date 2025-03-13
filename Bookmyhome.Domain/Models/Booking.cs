@@ -23,5 +23,15 @@ namespace Bookmyhome.Domain.Models
 
 		[Timestamp]
 		public byte[] Version { get; set; }
+
+
+		public void Update(Booking booking)
+		{
+			GuestID = booking.GuestID;
+			BoligID = booking.BoligID;
+			StartDato = booking.StartDato;
+			SlutDato = booking.SlutDato;
+			TotalPris = booking.TotalPris ?? 0;
+		}
 	}
 }

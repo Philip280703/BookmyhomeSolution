@@ -21,7 +21,7 @@ namespace Bookmyhome.Application.Command
 			_db = db;
 		}
 
-		void IUnitOfWork.BeginTransaction(System.Data.IsolationLevel isolationLevel = System.Data.IsolationLevel.Serializable)
+		void IUnitOfWork.BeginTransaction(System.Data.IsolationLevel isolationLevel)
 		{
 			if (_db.Database.CurrentTransaction != null) return;
 			_transaction = _db.Database.BeginTransaction(isolationLevel);
