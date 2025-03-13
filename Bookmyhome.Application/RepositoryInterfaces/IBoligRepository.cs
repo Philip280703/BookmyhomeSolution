@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bookmyhome.Application.Command.Interfaces
+namespace Bookmyhome.Application.RepositoryInterfaces
 {
-	public interface IBoligCommand
+	public interface IBoligRepository
 	{
 		List<Bolig> GetAllBolig();
 		Bolig GetBolig(int id);
