@@ -62,7 +62,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasIndex("PostnummerOgByPostnummer");
 
-                    b.ToTable("AresseEF");
+                    b.ToTable("AresseEF", (string)null);
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.Anmeldelse", b =>
@@ -104,7 +104,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasIndex("BrugerID");
 
-                    b.ToTable("AnmeldelseEF");
+                    b.ToTable("AnmeldelseEF", (string)null);
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.Bolig", b =>
@@ -147,7 +147,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasIndex("BrugerID");
 
-                    b.ToTable("BoligEF");
+                    b.ToTable("BoligEF", (string)null);
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.Booking", b =>
@@ -192,7 +192,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasIndex("BrugerID");
 
-                    b.ToTable("BookingEF");
+                    b.ToTable("BookingEF", (string)null);
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.Bruger", b =>
@@ -230,7 +230,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasKey("BrugerID");
 
-                    b.ToTable("BrugerEF");
+                    b.ToTable("BrugerEF", (string)null);
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.PostnummerOgBy", b =>
@@ -253,7 +253,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasKey("Postnummer");
 
-                    b.ToTable("postnummerOgByEF");
+                    b.ToTable("postnummerOgByEF", (string)null);
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.Adresse", b =>
