@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Bookmyhome.Persistence/ContextDB/ConnString.cs
+/Bookmyhome.Persistence/Migrations/20250313102651_initialcreate.cs
+/Bookmyhome.Persistence/Migrations/20250313102759_initialcreate.cs
+/Bookmyhome.Persistence/Migrations/20250313102759_initialcreate.cs
