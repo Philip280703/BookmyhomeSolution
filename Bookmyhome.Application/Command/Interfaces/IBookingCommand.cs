@@ -10,6 +10,7 @@ namespace Bookmyhome.Application.Command.Interfaces
 	public interface IBookingCommand
 	{
 		List<Booking> GetAllBookings();
+		List<Booking> GetBookingBasedOnAccommodation(int boligId);
 		Booking GetBooking(int id);
 		void AddBooking(Booking booking);
 		void UpdateBooking(Booking booking);
