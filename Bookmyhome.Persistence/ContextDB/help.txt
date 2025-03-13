@@ -14,6 +14,12 @@ ved add-migration skriv navnet på migrationen og tilføj --  -Project Bookmyhom
 til update db i EF brug ---- update-database -Project Bookmyhome.Persistence -Context MyDBContext
 
 
+-------------------------------------------------------------------------------------------------------
+
+Fucking sæt package manager console start-up projekt til bookmyhome.Persistance ikke fucking domain. 
+Ellers fungerer lortet ikke!!!!!!
+
+-------------------------------------------------------------------------------------------------------
 
 
 
