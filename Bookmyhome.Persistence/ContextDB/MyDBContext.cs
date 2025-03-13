@@ -17,10 +17,10 @@ namespace Bookmyhome.Persistence.ContextDB
 
 		public DbSet<Bolig> BoligEF { get; set; }
 		public DbSet<Bruger> BrugerEF { get; set; }
-		public DbSet<Adresse> AresseEF { get; set; }
+		public DbSet<Adresse> AdresseEF { get; set; }
 		public DbSet<Anmeldelse> AnmeldelseEF { get; set; }
 		public DbSet<Booking> BookingEF { get; set; }
-		public DbSet<PostnummerOgBy> postnummerOgByEF { get; set; }
+		public DbSet<PostnummerOgBy> PostnummerOgByEF { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

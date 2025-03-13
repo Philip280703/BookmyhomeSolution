@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bookmyhome.Application\Bookmyhome.Application.csproj" />
-    <ProjectReference Include="..\Bookmyhome.Domain\Bookmyhome.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

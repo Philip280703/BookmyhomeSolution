@@ -4,6 +4,7 @@ using Bookmyhome.Persistence.ContextDB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bookmyhome.Persistence.Migrations
 {
     [DbContext(typeof(MyDBContext))]
-    partial class MyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250313095717_fixidiot")]
+    partial class fixidiot
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -104,7 +107,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasIndex("BrugerID");
 
-                    b.ToTable("AnmeldelseEF", (string)null);
+                    b.ToTable("AnmeldelseEF");
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.Bolig", b =>
@@ -147,7 +150,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasIndex("BrugerID");
 
-                    b.ToTable("BoligEF", (string)null);
+                    b.ToTable("BoligEF");
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.Booking", b =>
@@ -192,7 +195,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasIndex("BrugerID");
 
-                    b.ToTable("BookingEF", (string)null);
+                    b.ToTable("BookingEF");
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.Bruger", b =>
@@ -230,7 +233,7 @@ namespace Bookmyhome.Persistence.Migrations
 
                     b.HasKey("BrugerID");
 
-                    b.ToTable("BrugerEF", (string)null);
+                    b.ToTable("BrugerEF");
                 });
 
             modelBuilder.Entity("Bookmyhome.Domain.Models.PostnummerOgBy", b =>
