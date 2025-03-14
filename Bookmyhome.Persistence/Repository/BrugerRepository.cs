@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Bookmyhome.Domain.Models;
 using Bookmyhome.Application.RepositoryInterfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bookmyhome.Persistence.Repository
 {
@@ -19,7 +20,7 @@ namespace Bookmyhome.Persistence.Repository
 
 		public List<Bruger> GetAllBruger()
 		{
-			return _db.BrugerEF.ToList();
+			return _db.BrugerEF.Include(b=>b.BoligList).ToList();
 		}
 
 		public Bruger GetBruger(int id)

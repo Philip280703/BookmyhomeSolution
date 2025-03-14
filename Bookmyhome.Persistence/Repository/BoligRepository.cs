@@ -1,6 +1,7 @@
 ﻿using Bookmyhome.Application.RepositoryInterfaces;
 using Bookmyhome.Domain.Models;
 using Bookmyhome.Persistence.ContextDB;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Bookmyhome.Persistence.Repository
 
         public List<Bolig> GetAllBolig()
         {
-            return _db.BoligEF.ToList();
+            return _db.BoligEF.OrderBy(b=>b.BoligID).Include(b=>b.BookingList).Include(b=>b.AnmeldelseList).Include(b=>b.Adresse).ThenInclude(a=>a.PostnummerOgBy).ToList();
         }
 
         public Bolig GetBolig(int id) 
