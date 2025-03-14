@@ -22,5 +22,13 @@ namespace Bookmyhome.Domain.Models
 
 		[Timestamp]
 		public byte[] Version { get; set; }
+
+
+		public void Update(Anmeldelse anmeldelse)
+		{
+			Rating = anmeldelse.Rating;
+			Kommentar = anmeldelse.Kommentar;
+			AnmeldelsesDato = anmeldelse.AnmeldelsesDato;
+		}
 	}
 }
