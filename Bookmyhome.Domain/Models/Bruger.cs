@@ -24,5 +24,15 @@ namespace Bookmyhome.Domain.Models
 		[Timestamp]
 		public byte[] Version { get; set; }
 
+
+		public void Update(Bruger bruger)
+		{
+			Fornavn = bruger.Fornavn;
+			Efternavn = bruger.Efternavn;
+			TelefonNummer = bruger.TelefonNummer;
+			Email = bruger.Email;
+			Udlejer = bruger.Udlejer;
+		}
+
 	}
 }
