@@ -11,14 +11,14 @@ namespace Bookmyhome.Domain.Models
 	{
 		public Adresse() { }
 
-		public int AdresseID { get; private set; }
-		public int Postnummer { get; private set; }
-		public string Vejnavn { get; private set; }
-		public string Husnummer { get; private set; }
-		public string Placering { get; private set; }
-		public string Note {  get; private set; }
+		public int AdresseID { get; set; }
+		public int Postnummer { get; set; }
+		public string Vejnavn { get; set; }
+		public string Husnummer { get; set; }
+		public string Placering { get; set; }
+		public string Note {  get; set; }
 
-		public PostnummerOgBy ?PostnummerOgBy { get; private set; }
+		public PostnummerOgBy ?PostnummerOgBy { get; set; }
 
 		[Timestamp]
 		public byte[] Version { get; set; }

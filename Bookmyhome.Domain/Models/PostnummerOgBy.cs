@@ -11,8 +11,8 @@ namespace Bookmyhome.Domain.Models
 	public class PostnummerOgBy
 	{
 		[Key]
-		public int Postnummer { get; private set; }
-		public string Bynavn { get; private set; }
+		public int Postnummer { get; set; }
+		public string Bynavn { get; set; }
 
 
 		[Timestamp]

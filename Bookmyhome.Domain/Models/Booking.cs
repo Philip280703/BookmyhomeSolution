@@ -10,16 +10,16 @@ namespace Bookmyhome.Domain.Models
 	public class Booking
 	{
 		public Booking() { }
-		public int BookingID { get; private set; }
-		public int GuestID { get; private set; }
-		public int BoligID { get; private set; }
-		public DateTime StartDato { get; private set; }
-		public DateTime SlutDato { get; private set ; }
-		public double ?TotalPris { get; private set; }
-		public string Status { get; private set; }
+		public int BookingID { get; set; }
+		public int GuestID { get; set; }
+		public int BoligID { get; set; }
+		public DateTime StartDato { get; set; }
+		public DateTime SlutDato { get; set ; }
+		public double ?TotalPris { get; set; }
+		public string Status { get; set; }
 
-		public Bruger ?bruger { get; private set; }
-		public Bolig ?bolig { get; private set; }
+		public Bruger ?bruger { get; set; }
+		public Bolig ?bolig { get; set; }
 
 		[Timestamp]
 		public byte[] Version { get; set; }

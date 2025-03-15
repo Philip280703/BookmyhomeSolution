@@ -11,18 +11,18 @@ namespace Bookmyhome.Domain.Models
 	{
 		public Bolig() { }
 
-		public int BoligID { get; private set; }
-		public string Title { get; private set; }
-		public string Beskrivelse { get; private set; } = string.Empty;
-		public int AdresseID { get; private set; }
-		public double PrisPrNat { get; private set; }
-		public int HostBrugerID { get; private set; }
+		public int BoligID { get; set; }
+		public string Title { get; set; }
+		public string Beskrivelse { get; set; } = string.Empty;
+		public int AdresseID { get; set; }
+		public double PrisPrNat { get; set; }
+		public int HostBrugerID { get; set; }
 
-		public List<Booking> BookingList { get; private set; } = new List<Booking>();
-		public List<Anmeldelse> AnmeldelseList { get; private set; } = new List<Anmeldelse>();
+		public List<Booking> BookingList { get; set; } = new List<Booking>();
+		public List<Anmeldelse> AnmeldelseList { get; set; } = new List<Anmeldelse>();
 
-		public Adresse ?Adresse { get; private set; }
-		public Bruger ?bruger {  get; private set; }
+		public Adresse ?Adresse { get; set; }
+		public Bruger ?bruger {  get; set; }
 
 
 		[Timestamp]

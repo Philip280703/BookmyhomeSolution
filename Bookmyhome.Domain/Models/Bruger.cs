@@ -11,15 +11,15 @@ namespace Bookmyhome.Domain.Models
 	{
 		Bruger() { }
 
-		public int BrugerID { get; private set; }
-		public string Fornavn { get; private set; } 
-		public string Efternavn { get; private set; }
-		public string TelefonNummer { get; private set; }
-		public string Email { get; private set; }
-		public bool Udlejer { get; private set; }
+		public int BrugerID { get; set; }
+		public string Fornavn { get; set; } 
+		public string Efternavn { get; set; }
+		public string TelefonNummer { get; set; }
+		public string Email { get; set; }
+		public bool Udlejer { get; set; }
 
-		public List<Bolig> BoligList { get; private set; } = new List<Bolig>();
-		public List<Booking> BookingList { get; private set; } = new List<Booking>();
+		public List<Bolig> BoligList { get; set; } = new List<Bolig>();
+		public List<Booking> BookingList { get; set; } = new List<Booking>();
 
 		[Timestamp]
 		public byte[] Version { get; set; }
