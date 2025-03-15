@@ -1,10 +1,13 @@
 using Bookmyhome.UI.BlazorApp.Components;
+using Bookmyhome.UI.BlazorApp.Controller;
+using Bookmyhome.UI.BlazorApp.Controller.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
 	.AddInteractiveServerComponents();
+
 
 var app = builder.Build();
 

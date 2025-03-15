@@ -1,10 +1,11 @@
 ﻿using Bookmyhome.Application.Command.Interfaces;
 using Bookmyhome.Domain.Models;
+using Bookmyhome.UI.BlazorApp.Controller.Interfaces;
 
 
 namespace Bookmyhome.UI.BlazorApp.Command
 {
-	public class BookingController
+	public class BookingController : IBookingController
 	{
 		private readonly IBookingCommand _iBookingServe;
 

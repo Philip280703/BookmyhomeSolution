@@ -10,6 +10,8 @@ namespace Bookmyhome.Domain.Models
 {
 	public class PostnummerOgBy
 	{
+		public PostnummerOgBy() { }
+
 		[Key]
 		public int Postnummer { get; set; }
 		public string Bynavn { get; set; }

@@ -1,0 +1,85 @@
+﻿@using Bookmyhome.Domain.Models;
+@using Bookmyhome.UI.BlazorApp.Controller;
+@using Bookmyhome.Application.Command.Interfaces;
+
+@inject IBrugerCommand BrugerCommandService
+
+@page "/AddBrugerPage"
+
+<h3>AddBrugerPage</h3>
+
+<div class="group-box">
+	<EditForm EditContext="@editContext"
+		OnValidSubmit="@HandleValidSubmit"
+		OnInvalidSubmit="@HandleInValidSubmit"
+		@formname="addBrugerForm">
+
+		<div class="col-6 mb-3">
+			<label for="Fornavn">Fornavn</label>
+			<InputText id="Fornavn" @bind-Value="brugerModel.Fornavn" class="form-control" />
+			<ValidationMessage For="@(() => brugerModel.Fornavn)" />
+		</div>
+		<div class="col-6 mb-3">
+			<label for="Efternavn">Efternavn</label>
+			<InputText id="Efternavn" @bind-Value="brugerModel.Efternavn" class="form-control" />
+			<ValidationMessage For="@(() => brugerModel.Efternavn)" />
+		</div>
+		<div class="col-6 mb-3">
+			<label for="TelefonNummer">TelefonNummer</label>
+			<InputText id="TelefonNummer" @bind-Value="brugerModel.TelefonNummer" class="form-control" />
+			<ValidationMessage For="@(() => brugerModel.TelefonNummer)" />
+		</div>
+		<div class="col-6 mb-3">
+			<label for="Email">Email</label>
+			<InputText id="Email" @bind-Value="brugerModel.Email" class="form-control" />
+			<ValidationMessage For="@(() => brugerModel.Email)" />
+		</div>
+
+		<br />
+		<div>
+		</div>
+		<div class="d-block">
+			<button type="submit" class="btn btn-primary">Tilføj kunde</button>
+		</div>
+	</EditForm>
+</div>
+
+@code {
+	private EditContext editContext;
+	private Bruger brugerModel = new Bruger();
+	
+
+	private int StatusCode { get; set; }
+
+	private BrugerController brugerController;
+
+	// [Inject]
+	// public IBrugerController IbrugerController { get; set; }
+
+	protected override void OnInitialized()
+	{
+		editContext = new EditContext(brugerModel);
+		brugerController = new BrugerController(BrugerCommandService); // Initialize the controller
+	}
+
+
+	private void HandleValidSubmit()
+	{
+		Console.WriteLine("HandleValidSubmit called..");
+		try
+		{
+			brugerController.AddBruger(brugerModel);
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Exception thrown " + ex);
+		}
+
+
+	}
+	private void HandleInValidSubmit()
+	{
+		Console.WriteLine("HandleInValidSubmit called..");
+		
+	}
+}
