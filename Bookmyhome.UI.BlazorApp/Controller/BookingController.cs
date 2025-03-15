@@ -4,11 +4,11 @@ using Bookmyhome.Domain.Models;
 
 namespace Bookmyhome.UI.BlazorApp.Command
 {
-	public class BookingCommand
+	public class BookingController
 	{
 		private readonly IBookingCommand _iBookingServe;
 
-		public BookingCommand(IBookingCommand bookingCommand) 
+		public BookingController(IBookingCommand bookingCommand) 
 		{ 
 			_iBookingServe = bookingCommand;
 		}
