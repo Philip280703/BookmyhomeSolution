@@ -1,10 +1,9 @@
 ﻿using Bookmyhome.Application.Command.Interfaces;
 using Bookmyhome.Domain.Models;
-using Bookmyhome.UI.BlazorApp.Controller.Interfaces;
 
 namespace Bookmyhome.UI.BlazorApp.Controller
 {
-	public class BoligController : IBoligController
+	public class BoligController
 	{
 		private readonly IBoligCommand _command;
 

@@ -1,10 +1,9 @@
 ﻿using Bookmyhome.Application.Command.Interfaces;
 using Bookmyhome.Domain.Models;
-using Bookmyhome.UI.BlazorApp.Controller.Interfaces;
 
 namespace Bookmyhome.UI.BlazorApp.Command
 {
-	public class AdresseController : IAdresseController
+	public class AdresseController 
 	{
 		private readonly IAdresseCommand _command;
 

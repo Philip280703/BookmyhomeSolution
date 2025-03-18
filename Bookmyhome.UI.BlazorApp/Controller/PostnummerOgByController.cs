@@ -1,10 +1,9 @@
 ﻿using Bookmyhome.Application.Command.Interfaces;
 using Bookmyhome.Domain.Models;
-using Bookmyhome.UI.BlazorApp.Controller.Interfaces;
 
 namespace Bookmyhome.UI.BlazorApp.Controller
 {
-	public class PostnummerOgByController : IPostnummerOgByController
+	public class PostnummerOgByController 
 	{
 		private readonly IPostnummerOgByCommand _command;
 
