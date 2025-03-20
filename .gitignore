@@ -365,3 +365,4 @@ FodyWeavers.xsd
 /Bookmyhome.Persistence/Migrations/20250313102651_initialcreate.cs
 /Bookmyhome.Persistence/Migrations/20250313102759_initialcreate.cs
 /Bookmyhome.Persistence/Migrations/20250313102759_initialcreate.cs
+/Bookmyhome.UI.BlazorApp/appsettings.json
