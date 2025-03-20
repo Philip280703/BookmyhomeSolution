@@ -9,7 +9,7 @@ using Bookmyhome.Domain.Models;
 
 namespace Bookmyhome.Application.Command
 {
-	internal class BoligCommand : IBoligCommand
+	public class BoligCommand : IBoligCommand
 	{
         private readonly IBoligRepository _repository;
 		private readonly IUnitOfWork _iUnitOfwork;

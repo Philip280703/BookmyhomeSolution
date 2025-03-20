@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bookmyhome.Application.Command
 {
-	internal class PostnummerOgByCommand : IPostnummerOgByCommand
+	public class PostnummerOgByCommand : IPostnummerOgByCommand
 	{
 		private readonly IPostnummerOgByRepository _repository;
 

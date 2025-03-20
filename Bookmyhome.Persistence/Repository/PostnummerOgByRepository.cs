@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bookmyhome.Persistence.Repository
 {
-	internal class PostnummerOgByRepository : IPostnummerOgByRepository
+	public class PostnummerOgByRepository : IPostnummerOgByRepository
 	{
 		private readonly MyDBContext _db;
 		public List<PostnummerOgBy> GetAll()

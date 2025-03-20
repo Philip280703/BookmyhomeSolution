@@ -9,6 +9,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Bookmyhome.Application\Bookmyhome.Application.csproj" />
     <ProjectReference Include="..\Bookmyhome.Domain\Bookmyhome.Domain.csproj" />
+    <ProjectReference Include="..\Bookmyhome.Infrastructure\Bookmyhome.Infrastructure.csproj" />
+    <ProjectReference Include="..\Bookmyhome.Persistence\Bookmyhome.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

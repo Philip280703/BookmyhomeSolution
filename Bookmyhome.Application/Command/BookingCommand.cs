@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bookmyhome.Command.Services
 {
-	internal class BookingCommand : IBookingCommand
+	public class BookingCommand : IBookingCommand
 	{
 		private readonly IBookingRepository _iBookingRepository;
 		private readonly IUnitOfWork _iUnitOfwork;

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bookmyhome.Application.Command
 {
-	internal class BrugerCommand : IBrugerCommand
+	public class BrugerCommand : IBrugerCommand
 	{
 		private readonly IBrugerRepository _iBrugerRepository;
 		private readonly IUnitOfWork _unitOfWork;

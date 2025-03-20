@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bookmyhome.Application.Command
 {
-	internal class AdresseCommand : IAdresseCommand
+	public class AdresseCommand : IAdresseCommand
 	{
 		private readonly IAdresseRepository _repository;
 

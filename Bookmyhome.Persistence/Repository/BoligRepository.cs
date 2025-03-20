@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Bookmyhome.Persistence.Repository
 {
-	internal class BoligRepository : IBoligRepository
+	public class BoligRepository : IBoligRepository
 	{
         private readonly MyDBContext _db;
         public BoligRepository(MyDBContext dbcontext)
