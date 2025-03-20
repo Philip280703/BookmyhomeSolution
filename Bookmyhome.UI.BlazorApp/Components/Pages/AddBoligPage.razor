@@ -1,0 +1,26 @@
+﻿@using Bookmyhome.Application.Command.Interfaces;
+@using Bookmyhome.Domain.Models;
+
+@inject IBoligCommand BoligCommandService
+@inject IAdresseCommand AdresseCommandService
+@inject IPostnummerOgByCommand PostnummerCommandService
+
+@rendermode InteractiveServer
+
+@page "/AddBoligPage"
+
+<h3>AddBoligPage</h3>
+
+@code {
+	[Inject]
+	public IBoligCommand IBoligService { get; set; }
+
+	[Inject]
+	public IAdresseCommand IAdresseService { get; set; }
+
+	[Inject]
+	public IPostnummerOgByCommand IPostnummerService { get; set; }
+
+	private List<PostnummerOgBy> PostnummerList = new List<PostnummerOgBy>();
+
+}

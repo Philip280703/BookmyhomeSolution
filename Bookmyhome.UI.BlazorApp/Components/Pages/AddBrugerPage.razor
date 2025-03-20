@@ -4,15 +4,20 @@
 
 @inject IBrugerCommand BrugerCommandService
 
+@rendermode InteractiveServer
+
 @page "/AddBrugerPage"
 
 <h3>AddBrugerPage</h3>
 
 <div class="group-box">
 	<EditForm EditContext="@editContext"
-		OnValidSubmit="@HandleValidSubmit"
-		OnInvalidSubmit="@HandleInValidSubmit"
-		@formname="addBrugerForm">
+			  OnValidSubmit="@HandleValidSubmit"
+			  OnInvalidSubmit="@HandleInValidSubmit"
+			  FormName="addBrugerForm">
+			  <DataAnnotationsValidator/>
+
+
 
 		<div class="col-6 mb-3">
 			<label for="Fornavn">Fornavn</label>
@@ -47,19 +52,20 @@
 @code {
 	private EditContext editContext;
 	private Bruger brugerModel = new Bruger();
-	
+
 
 	private int StatusCode { get; set; }
 
 	private BrugerController brugerController;
 
-	// [Inject]
-	// public IBrugerController IbrugerController { get; set; }
+	[Inject]
+	public IBrugerCommand IService { get; set; }
 
 	protected override void OnInitialized()
 	{
+		brugerModel = new Bruger(); 
 		editContext = new EditContext(brugerModel);
-		brugerController = new BrugerController(BrugerCommandService); // Initialize the controller
+		brugerController = new BrugerController(BrugerCommandService);
 	}
 
 
@@ -68,7 +74,8 @@
 		Console.WriteLine("HandleValidSubmit called..");
 		try
 		{
-			brugerController.AddBruger(brugerModel);
+			IService.AddBruger(brugerModel);
+			editContext = new EditContext(new Bruger());
 		}
 		catch (Exception ex)
 		{

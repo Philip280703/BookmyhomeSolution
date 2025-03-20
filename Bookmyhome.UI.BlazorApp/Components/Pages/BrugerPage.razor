@@ -1,0 +1,42 @@
+﻿@using Bookmyhome.Application.Command.Interfaces;
+@using Bookmyhome.Domain.Models;
+
+@inject IBrugerCommand BrugerCommandService
+
+@rendermode InteractiveServer
+
+@page "/BrugerPage"
+
+<h3>BrugerPage</h3>
+
+<table class="table table-primary">
+	<tr>
+		<th>ID</th>
+		<th>Fornavn</th>
+		<th>Efternavn</th>
+		<th>Tlf.</th>
+	</tr>
+	@foreach(var bruger in BrugerList)
+	{
+		<tr>
+			<td>@bruger.BrugerID</td>
+			<td>@bruger.Fornavn</td>
+			<td>@bruger.Efternavn</td>
+			<td>@bruger.TelefonNummer</td>
+		</tr>
+	}
+	
+</table>
+
+@code {
+	private List<Bruger> BrugerList = new List<Bruger>();
+
+	[Inject]
+	public IBrugerCommand IService { get; set; }
+
+	protected override void OnInitialized()
+	{
+		BrugerList = IService.GetAllBruger();
+	}
+
+}

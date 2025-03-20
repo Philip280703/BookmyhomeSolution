@@ -31,6 +31,7 @@ namespace Bookmyhome.Persistence.Repository
 		public void AddBruger(Bruger bruger) 
 		{ 
 			_db.BrugerEF.Add(bruger);
+			_db.SaveChanges();
 		}
 
 		public void UpdateBruger(Bruger bruger)
