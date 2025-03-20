@@ -9,11 +9,9 @@ namespace Bookmyhome.Persistence.ContextDB
 	public class MyDBContext : DbContext
 	{
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseSqlServer(ConnString.GetConnString());
-
-		}
+		public MyDBContext(DbContextOptions<MyDBContext> options)
+		: base(options)
+		{ }
 
 		public DbSet<Bolig> BoligEF { get; set; }
 		public DbSet<Bruger> BrugerEF { get; set; }

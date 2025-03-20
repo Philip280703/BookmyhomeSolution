@@ -1,22 +1,21 @@
-﻿using Bookmyhome.Application.Command.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Transactions;
-using System.Data;
+using Bookmyhome.Application.RepositoryInterfaces;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore;
+using Bookmyhome.Persistence.ContextDB;
 
-namespace Bookmyhome.Application.Command
+namespace Bookmyhome.Persistence.Repository
 {
 	public class UnitOfWork : IUnitOfWork
 	{
-		private readonly DbContext _db;
+		private readonly MyDBContext _db;
 		private IDbContextTransaction? _transaction;
 
-		public UnitOfWork (DbContext db)
+		public UnitOfWork(MyDBContext db)
 		{
 			_db = db;
 		}
@@ -38,6 +37,5 @@ namespace Bookmyhome.Application.Command
 			_transaction.Rollback();
 			_transaction.Dispose();
 		}
-
 	}
 }

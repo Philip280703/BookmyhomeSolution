@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bookmyhome.Command.Services
+namespace Bookmyhome.Application.Command
 {
 	public class BookingCommand : IBookingCommand
 	{
