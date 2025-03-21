@@ -54,9 +54,9 @@
 	private Bruger brugerModel = new Bruger();
 
 
-	private int StatusCode { get; set; }
+	// private int StatusCode { get; set; }
 
-	private BrugerController brugerController;
+	// private BrugerController brugerController;
 
 	[Inject]
 	public IBrugerCommand IService { get; set; }
@@ -65,7 +65,7 @@
 	{
 		brugerModel = new Bruger(); 
 		editContext = new EditContext(brugerModel);
-		brugerController = new BrugerController(BrugerCommandService);
+		// brugerController = new BrugerController(BrugerCommandService);
 	}
 
 

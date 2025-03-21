@@ -2,6 +2,7 @@
 @using Bookmyhome.Domain.Models;
 
 @inject IBrugerCommand BrugerCommandService
+@inject NavigationManager navigationManager
 
 @rendermode InteractiveServer
 
@@ -37,6 +38,11 @@
 	protected override void OnInitialized()
 	{
 		BrugerList = IService.GetAllBruger();
+	}
+
+	private void NavigateToBoligOverview()
+	{
+		
 	}
 
 }

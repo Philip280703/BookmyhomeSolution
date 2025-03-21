@@ -4,6 +4,7 @@
 @inject IBoligCommand BoligCommandService
 @inject IAdresseCommand AdresseCommandService
 @inject IPostnummerOgByCommand PostnummerCommandService
+@inject IBrugerCommand BrugerCommandService
 
 @rendermode InteractiveServer
 
@@ -21,6 +22,11 @@
 	[Inject]
 	public IPostnummerOgByCommand IPostnummerService { get; set; }
 
-	private List<PostnummerOgBy> PostnummerList = new List<PostnummerOgBy>();
+	[Inject]
+	public IBrugerCommand IBrugerService { get; set; }
+
+	private List<PostnummerOgBy> _PostnummerList = new List<PostnummerOgBy>();
+
+	private Bruger _bruger;
 
 }

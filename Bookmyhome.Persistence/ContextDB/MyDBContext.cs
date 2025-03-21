@@ -27,7 +27,7 @@ namespace Bookmyhome.Persistence.ContextDB
 			modelBuilder.Entity<Adresse>().Property(e => e.Version).IsRowVersion();
 			modelBuilder.Entity<Anmeldelse>().Property(e => e.Version).IsRowVersion();
 			modelBuilder.Entity<Booking>().Property(e => e.Version).IsRowVersion();
-			modelBuilder.Entity<PostnummerOgBy>().Property(e => e.Version).IsRowVersion();
+			
 		}
 		
 

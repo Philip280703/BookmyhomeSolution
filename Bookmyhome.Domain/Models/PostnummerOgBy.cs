@@ -17,7 +17,5 @@ namespace Bookmyhome.Domain.Models
 		public string Bynavn { get; set; }
 
 
-		[Timestamp]
-		public byte[] Version { get; set; }
 	}
 }
