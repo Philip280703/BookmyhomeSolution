@@ -1,0 +1,38 @@
+﻿@using Bookmyhome.Application.Command.Interfaces;
+@using Bookmyhome.Domain.Models;
+<h3>IndividualBrugerPage</h3>
+
+@page "/IndivudualBrugerPage/{Brugerid:int}"
+
+<table class="table table-primary">
+    <tr>
+		<th>ID</th>
+		<th>Navn</th>
+		<th>tlf</th>
+    </tr>
+	<tr>
+		<td>@bruger.BrugerID</td>
+		<td>@bruger.Fornavn @bruger.Efternavn</td>
+		<td>@bruger.TelefonNummer</td>
+	</tr>
+</table>
+
+
+<AddBoligPage></AddBoligPage>
+
+
+@code {
+
+	[Parameter]
+	public int BrugerId { get; set; }
+
+	[Inject]
+	public IBrugerCommand ibrugerCommand { get; set; }
+
+	private Bruger bruger;
+
+	protected override void OnInitialized()
+	{
+		bruger = ibrugerCommand.GetBruger(BrugerId);
+	}
+}

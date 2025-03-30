@@ -20,7 +20,7 @@
 	@foreach(var bruger in BrugerList)
 	{
 		<tr>
-			<td>@bruger.BrugerID</td>
+			<td @onclick="() => NavigateToIndividualBrugerOverview(bruger.BrugerID)">@bruger.BrugerID</td>
 			<td>@bruger.Fornavn</td>
 			<td>@bruger.Efternavn</td>
 			<td>@bruger.TelefonNummer</td>
@@ -40,9 +40,9 @@
 		BrugerList = IService.GetAllBruger();
 	}
 
-	private void NavigateToBoligOverview()
+	private void NavigateToIndividualBrugerOverview(int id)
 	{
-		
+		navigationManager.NavigateTo($"/IndivudualBrugerPage/{id}");
 	}
 
 }

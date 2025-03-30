@@ -12,6 +12,35 @@
 
 <h3>AddBoligPage</h3>
 
+
+<div class="group-box">
+	<EditForm EditContext="@editContext"
+		OnValidSubmit="@HandleValidSubmit"
+			  OnInvalidSubmit="@HandleInValidSubmit">
+			  <DataAnnotationsValidator/>
+
+		<div class="col-6 mb-3">
+			<label for="Title">Title</label>
+			<InputText id="Title" @bind-Value="boligModel.Title" class="form-control" />
+			<ValidationMessage For="@(() => boligModel.Title)" />
+		</div>
+		<div class="col-6 mb-3">
+			<label for="Beskrivelse">Beskrivelse</label>
+			<InputText id="Beskrivelse" @bind-Value="boligModel.Beskrivelse" class="form-control" />
+			<ValidationMessage For="@(() => boligModel.Beskrivelse)" />
+		</div>
+		<div class="col-6 mb-3">
+			<label for="PrisPrNat">Pris pr nat</label>
+			<InputNumber id="PrisPrNat" @bind-Value="boligModel.PrisPrNat" class="form-control" />
+			<ValidationMessage For="@(() => boligModel.PrisPrNat)" />
+		</div>
+
+
+
+	</EditForm>
+</div>
+
+
 @code {
 	[Inject]
 	public IBoligCommand IBoligService { get; set; }
@@ -28,5 +57,20 @@
 	private List<PostnummerOgBy> _PostnummerList = new List<PostnummerOgBy>();
 
 	private Bruger _bruger;
+
+	private EditContext editContext;
+	private Bolig boligModel = new Bolig();
+
+	private void HandleValidSubmit()
+	{
+		// boligModel.Bruger = _bruger;
+		// boligModel.Adresse = _adresse;
+		// boligModel.PostnummerOgBy = _postnummerOgBy;
+		IBoligService.AddBolig(boligModel);
+	}
+	private void HandleInValidSubmit()
+	{
+		Console.WriteLine("HandleInValidSubmit called..");
+	}
 
 }
