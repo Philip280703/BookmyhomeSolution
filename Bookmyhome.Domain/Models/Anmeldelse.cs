@@ -14,7 +14,7 @@ namespace Bookmyhome.Domain.Models
 		public int GuestID { get; set; }
 		public int BoligID { get; set; }
 		public double Rating { get; set; }
-		public string Kommentar {  get; set; }
+		public string ?Kommentar {  get; set; }
 		public DateTime AnmeldelsesDato { get; set; }
 
 		public Bruger ?bruger { get; set; }

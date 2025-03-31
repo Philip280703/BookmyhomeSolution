@@ -14,7 +14,7 @@ namespace Bookmyhome.Domain.Models
 		public int GuestID { get; set; }
 		public int BoligID { get; set; }
 		public DateTime StartDato { get; set; }
-		public DateTime SlutDato { get; set ; }
+		public DateTime ?SlutDato { get; set ; }
 		public double ?TotalPris { get; set; }
 		public string Status { get; set; }
 

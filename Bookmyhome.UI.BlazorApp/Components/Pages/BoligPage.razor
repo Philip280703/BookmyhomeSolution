@@ -1,8 +1,36 @@
-﻿
-@page "/Bolig/{brugerID:int}"
+﻿@using Bookmyhome.Application.Command.Interfaces;
+@using Bookmyhome.Domain.Models;
+@page "/Bolig"
 
 <h3>BoligPage</h3>
 
+<table class="table table-primary">
+	<tr>
+		<th>ID</th>
+		<th>Title</th>
+		<th>Beskrivelse</th>
+		<th>Pris pr nat</th>
+	</tr>
+	@foreach(var bolig in BoligList)
+	{
+		<tr>
+			<td>@bolig.BoligID</td>
+			<td>@bolig.Title</td>
+			<td>@bolig.Beskrivelse</td>
+			<td>@bolig.PrisPrNat</td>
+		</tr>
+	}
+</table>
+
 @code {
+	private List<Bolig> BoligList = new List<Bolig>();
+
+	[Inject]
+	public IBoligCommand IService { get; set; }
+
+	protected override void OnInitialized()
+	{
+		BoligList = IService.GetAllBolig();
+	}
 
 }

@@ -8,7 +8,7 @@
 
 @rendermode InteractiveServer
 
-@page "/AddBoligPage"
+@page "/AddBoligPage/{BrugerId:int}"
 
 <h3>AddBoligPage</h3>
 
@@ -34,7 +34,32 @@
 			<InputNumber id="PrisPrNat" @bind-Value="boligModel.PrisPrNat" class="form-control" />
 			<ValidationMessage For="@(() => boligModel.PrisPrNat)" />
 		</div>
+		<div class="col-6 mb-3">
+			<label for="Vejnavn">Vejnavn</label>
+			<InputText id="Vejnavn" @bind-Value="adresseModel.Vejnavn" class="form-control" />
+			<ValidationMessage For="@(() => adresseModel.Vejnavn)" />
+		</div>
+		<div class="col-6 mb-3">
+			<label for="Husnummer">Husnummer</label>
+			<InputText id="Husnummer" @bind-Value="adresseModel.Husnummer" class="form-control" />
+			<ValidationMessage For="@(() => adresseModel.Husnummer)" />
+		</div>
+		<div class="col-6 mb-3">
+			<label for="Postnummer">Postnummer</label>
+			<InputNumber id="Postnummer" @bind-Value="adresseModel.Postnummer" @oninput="UpdateBynavn" class="form-control"  />
+			<ValidationMessage For="@(() => adresseModel.Postnummer)" />
+		</div>
 
+		<div class="col-2 mb-3 postnummer">
+			<label for="Bynavn">By</label>
+			<input id="Bynavn" type="text" value="@Bynavn" class="form-control" readonly />
+		</div>
+
+		<div>
+		</div>
+		<div class="d-block">
+			<button type="submit" class="btn btn-primary">Tilføj Bolig</button>
+		</div>
 
 
 	</EditForm>
@@ -42,6 +67,10 @@
 
 
 @code {
+
+	[Parameter]
+	public int BrugerId { get; set; }
+
 	[Inject]
 	public IBoligCommand IBoligService { get; set; }
 
@@ -60,17 +89,55 @@
 
 	private EditContext editContext;
 	private Bolig boligModel = new Bolig();
+	private Adresse adresseModel = new Adresse();
+
+	protected override void OnInitialized()
+	{
+		_bruger = IBrugerService.GetBruger(BrugerId);
+		editContext = new EditContext(boligModel);
+		_PostnummerList = IPostnummerService.GetAll();
+	}
 
 	private void HandleValidSubmit()
 	{
-		// boligModel.Bruger = _bruger;
-		// boligModel.Adresse = _adresse;
-		// boligModel.PostnummerOgBy = _postnummerOgBy;
+		boligModel.HostBrugerID = _bruger.BrugerID;
+		_bruger.Udlejer = true;
+		IBrugerService.UpdateBruger(_bruger);
+		IAdresseService.AddAdresse(adresseModel);
+		boligModel.AdresseID = adresseModel.AdresseID;
 		IBoligService.AddBolig(boligModel);
+		Console.WriteLine("HandleValidSubmit called..");
 	}
 	private void HandleInValidSubmit()
 	{
 		Console.WriteLine("HandleInValidSubmit called..");
+	}
+
+
+	private string Bynavn { get; set; } = string.Empty;
+
+	private void UpdateBynavn(ChangeEventArgs e)
+	{
+		if (int.TryParse(e.Value?.ToString(), out int postNummer))
+		{
+			adresseModel.Postnummer = postNummer;
+
+			var match = _PostnummerList.FirstOrDefault(x => x.Postnummer == postNummer);
+			if (match != null)
+			{
+				Bynavn = match.Bynavn;
+			}
+			else
+			{
+				Bynavn = null;
+			}
+			Console.WriteLine($"PostNummer: {postNummer}, ByNavn: {Bynavn}");
+		}
+		else
+		{
+
+			Console.WriteLine("Invalid postnummer input.");
+		}
 	}
 
 }

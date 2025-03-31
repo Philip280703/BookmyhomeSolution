@@ -1,5 +1,9 @@
 ﻿@using Bookmyhome.Application.Command.Interfaces;
 @using Bookmyhome.Domain.Models;
+@inject NavigationManager navigationManager;
+
+@rendermode InteractiveServer
+
 <h3>IndividualBrugerPage</h3>
 
 @page "/IndivudualBrugerPage/{Brugerid:int}"
@@ -18,7 +22,7 @@
 </table>
 
 
-<AddBoligPage></AddBoligPage>
+<button class="btn btn-primary" @onclick="() => NavigateToAddBoligPage(id)">Tilføj bolig</button>
 
 
 @code {
@@ -29,10 +33,19 @@
 	[Inject]
 	public IBrugerCommand ibrugerCommand { get; set; }
 
+	private int id;
+
 	private Bruger bruger;
 
 	protected override void OnInitialized()
 	{
 		bruger = ibrugerCommand.GetBruger(BrugerId);
+		id = bruger.BrugerID;
+	}
+
+	private void NavigateToAddBoligPage(int id)
+	{
+		navigationManager.NavigateTo($"/AddBoligPage/{id}");
+		Console.WriteLine("NavigateToAddBoligPage called..");
 	}
 }

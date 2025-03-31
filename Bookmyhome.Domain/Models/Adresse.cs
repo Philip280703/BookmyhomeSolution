@@ -15,8 +15,8 @@ namespace Bookmyhome.Domain.Models
 		public int Postnummer { get; set; }
 		public string Vejnavn { get; set; }
 		public string Husnummer { get; set; }
-		public string Placering { get; set; }
-		public string Note {  get; set; }
+		public string ?Placering { get; set; }
+		public string ?Note {  get; set; }
 
 		public PostnummerOgBy ?PostnummerOgBy { get; set; }
 

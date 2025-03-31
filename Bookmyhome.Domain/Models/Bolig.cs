@@ -13,10 +13,10 @@ namespace Bookmyhome.Domain.Models
 
 		public int BoligID { get; set; }
 		public string Title { get; set; }
-		public string Beskrivelse { get; set; } = string.Empty;
-		public int AdresseID { get; set; }
+		public string ?Beskrivelse { get; set; } = string.Empty;
+		public int ?AdresseID { get; set; }
 		public double PrisPrNat { get; set; }
-		public int HostBrugerID { get; set; }
+		public int ?HostBrugerID { get; set; }
 
 		public List<Booking> BookingList { get; set; } = new List<Booking>();
 		public List<Anmeldelse> AnmeldelseList { get; set; } = new List<Anmeldelse>();

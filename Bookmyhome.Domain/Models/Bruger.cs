@@ -29,10 +29,10 @@ namespace Bookmyhome.Domain.Models
 		[EmailAddress(ErrorMessage = "Ugyldig email-adresse")]
 		[RegularExpression(@"^.{2,}@.{2,}\..{2,}$", ErrorMessage = "Email skal have mindst 2 tegn før @ og mindst 2 efter .")]
 		public string Email { get; set; }
-		public bool Udlejer { get; set; }
+		public bool Udlejer { get; set; } = false;
 
-		public List<Bolig> BoligList { get; set; } = new List<Bolig>();
-		public List<Booking> BookingList { get; set; } = new List<Booking>();
+		public List<Bolig> ?BoligList { get; set; } = new List<Bolig>();
+		public List<Booking> ?BookingList { get; set; } = new List<Booking>();
 
 		[Timestamp]
 		public byte[] Version { get; set; }

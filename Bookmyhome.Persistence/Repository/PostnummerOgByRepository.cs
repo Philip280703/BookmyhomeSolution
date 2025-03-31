@@ -12,6 +12,11 @@ namespace Bookmyhome.Persistence.Repository
 	public class PostnummerOgByRepository : IPostnummerOgByRepository
 	{
 		private readonly MyDBContext _db;
+
+		public PostnummerOgByRepository(MyDBContext db)
+		{
+			_db = db;
+		}
 		public List<PostnummerOgBy> GetAll()
 		{
 			return _db.PostnummerOgByEF.ToList();
